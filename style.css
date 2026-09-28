@@ -1,0 +1,1779 @@
+/* =========================================================
+   CAMI GIFT HALL
+   STYLE.CSS
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --purple-dark: #73527e;
+    --purple: #9d79aa;
+    --purple-light: #cbb2d3;
+
+    --pink: #e9b3c5;
+
+    --cream: #fffaf3;
+
+    --gold: #caa45c;
+
+    --text: #704c69;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            180deg,
+            #a17caf 0%,
+            #a985b5 50%,
+            #9270a0 100%
+        );
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+.moon-glow {
+
+    position: absolute;
+
+    width: 560px;
+
+    height: 560px;
+
+    top: -160px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.15),
+            rgba(255,255,255,0.04) 45%,
+            transparent 72%
+        );
+
+    filter: blur(5px);
+
+}
+
+
+.mist {
+
+    position: absolute;
+
+    width: 75%;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,0.09),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        mistMove
+        12s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.mist-one {
+
+    left: -20%;
+
+    bottom: 5%;
+
+}
+
+
+.mist-two {
+
+    right: -20%;
+
+    bottom: 25%;
+
+    animation-delay: -5s;
+
+}
+
+
+@keyframes mistMove {
+
+    from {
+        transform: translateX(-20px);
+    }
+
+    to {
+        transform: translateX(30px);
+    }
+
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars-layer {
+
+    position: absolute;
+
+    inset: 0;
+
+}
+
+
+.background-star {
+
+    position: absolute;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: var(--size);
+
+    opacity: var(--opacity);
+
+    animation:
+        starTwinkle
+        var(--duration)
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes starTwinkle {
+
+    from {
+
+        opacity: 0.15;
+
+        transform:
+            scale(0.7)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        opacity: 0.8;
+
+        transform:
+            scale(1.15)
+            rotate(18deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   HALL
+========================================================= */
+
+.hall {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1250px, 94vw);
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding:
+        60px
+        0
+        90px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hall-header {
+
+    position: relative;
+
+    z-index: 30;
+
+    text-align: center;
+
+    animation:
+        headerAppear
+        1s
+        ease
+        both;
+
+}
+
+
+@keyframes headerAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.header-stars {
+
+    color: #fff0bf;
+
+    font-size: 22px;
+
+    letter-spacing: 12px;
+
+    text-shadow:
+        0 0 12px
+        rgba(255,228,168,0.7);
+
+}
+
+
+.eyebrow {
+
+    margin:
+        10px
+        0
+        5px;
+
+    color:
+        rgba(255,250,255,0.78);
+
+    font-size: 10px;
+    letter-spacing: 5px;
+
+}
+
+
+.hall-header h1 {
+
+    margin: 0;
+
+    color: #fffaf9;
+
+    font-size:
+        clamp(45px, 7vw, 78px);
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 5px 20px
+        rgba(65,30,75,0.25);
+
+}
+
+
+.subtitle {
+
+    margin:
+        9px
+        0
+        0;
+
+    color:
+        rgba(255,250,255,0.92);
+
+    font-size: 17px;
+
+    font-style: italic;
+
+}
+
+
+.header-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width:
+        min(300px, 60vw);
+
+    margin:
+        19px
+        auto
+        0;
+
+}
+
+
+.header-line span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,240,198,0.6)
+        );
+
+}
+
+
+.header-line span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,240,198,0.6),
+            transparent
+        );
+
+}
+
+
+.header-line b {
+
+    color: #ffe3a1;
+
+    font-weight: normal;
+
+}
+
+
+/* =========================================================
+   GIFT HALL
+========================================================= */
+
+.gifts {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 760px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================================
+   GIFT BUTTON
+========================================================= */
+
+.gift {
+
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    appearance: none;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transform-origin: center bottom;
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+
+}
+
+
+/*
+    IMPORTANT:
+    Button must not hide pointer events.
+*/
+
+.gift img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    position: relative;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    filter:
+        drop-shadow(
+            0 20px 17px
+            rgba(48,25,58,0.22)
+        );
+
+    transition:
+        filter 0.35s ease,
+        transform 0.35s ease;
+
+}
+
+
+/* =========================================================
+   SMALL MAGICAL SPARKLES
+========================================================= */
+
+.gift-sparkle {
+
+    position: absolute;
+
+    z-index: 4;
+
+    color: #fff1c5;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 8px
+        rgba(255,224,155,0.9);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.sparkle-one {
+
+    top: 15%;
+
+    right: 12%;
+
+    font-size: 15px;
+
+}
+
+
+.sparkle-two {
+
+    bottom: 20%;
+
+    left: 8%;
+
+    font-size: 11px;
+
+}
+
+
+/*
+    NO BIG AURA.
+    Only tiny sparkles appear when hovering.
+*/
+
+.gift:hover .gift-sparkle,
+.gift:focus-visible .gift-sparkle {
+
+    opacity: 1;
+
+}
+
+
+.gift:hover .sparkle-one,
+.gift:focus-visible .sparkle-one {
+
+    transform:
+        translateY(-5px)
+        rotate(20deg);
+
+}
+
+
+.gift:hover .sparkle-two,
+.gift:focus-visible .sparkle-two {
+
+    transform:
+        translateY(4px)
+        rotate(-20deg);
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.gift:hover,
+.gift:focus-visible {
+
+    z-index: 50;
+
+    transform:
+        translateY(-10px)
+        scale(1.035);
+
+    outline: none;
+
+}
+
+
+.gift:hover img,
+.gift:focus-visible img {
+
+    filter:
+        drop-shadow(
+            0 23px 21px
+            rgba(48,25,58,0.24)
+        )
+        drop-shadow(
+            0 0 13px
+            rgba(255,226,171,0.38)
+        );
+
+}
+
+
+.gift:active {
+
+    transform:
+        translateY(-3px)
+        scale(0.985);
+
+}
+
+
+/* =========================================================
+   POSITIONS
+   KEEPING YOUR ARRANGEMENT
+========================================================= */
+
+
+/* MASHA */
+
+.gift-masha {
+
+    width: 360px;
+
+    left: 3%;
+
+    top: 20px;
+
+    transform:
+        rotate(-2deg);
+
+    z-index: 5;
+
+}
+
+
+/* ZAHRAA */
+
+.gift-zahraa {
+
+    width: 355px;
+    right: 25%;
+
+    top: 50px;
+
+    transform:
+        rotate(2deg);
+
+    z-index: 5;
+
+}
+
+
+/* HEATHER */
+
+.gift-heather {
+
+    width: 225px;
+
+    left: 0;
+
+    top: 305px;
+
+    transform:
+        rotate(-3deg);
+
+    z-index: 12;
+
+}
+
+
+/* ANGELOS */
+
+.gift-angelos {
+
+    width: 350px;
+
+    left: 28%;
+
+    top: 270px;
+
+    transform:
+        rotate(-2deg);
+
+    z-index: 10;
+
+}
+
+
+/* FAIRY */
+
+.gift-fairy {
+
+    width: 225px;
+
+    right: 9%;
+
+    top: 285px;
+
+    transform:
+        rotate(3deg);
+
+    z-index: 13;
+
+}
+
+
+/* ELLARA */
+
+.gift-ellara {
+
+    width: 170px;
+
+    left: 16%;
+
+    top: 485px;
+
+    transform:
+        rotate(-4deg);
+
+    z-index: 20;
+
+}
+
+
+/* NARI */
+
+.gift-nari {
+
+    width: 455px;
+
+    right: 0;
+
+    top: 455px;
+
+    transform:
+        rotate(1deg);
+
+    z-index: 9;
+
+}
+
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.hall-hint {
+
+    position: relative;
+
+    z-index: 30;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: fit-content;
+
+    max-width: 90%;
+
+    margin:
+        5px
+        auto
+        0;
+
+    padding:
+        11px
+        20px;
+
+    border:
+        1px solid
+        rgba(255,245,222,0.25);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    backdrop-filter:
+        blur(8px);
+
+    color:
+        rgba(255,250,255,0.85);
+
+    font-size: 13px;
+
+}
+
+
+.hall-hint span:first-child,
+.hall-hint span:last-child {
+
+    color: #ffe3a1;
+
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.card-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 22px;
+
+    background:
+        rgba(48,25,57,0.66);
+
+    backdrop-filter:
+        blur(0);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 1000;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease,
+        backdrop-filter 0.4s ease;
+
+}
+
+
+.card-overlay.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.gift-card {
+
+    position: relative;
+
+    width:
+        min(500px, 94vw);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    padding:
+        35px
+        38px
+        28px;
+
+    border:
+        1px solid
+        rgba(202,164,92,0.55);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.99),
+            rgba(255,247,250,0.98)
+        );
+
+    box-shadow:
+        0 40px 100px
+        rgba(35,18,43,0.45);
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.88);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.6s
+        cubic-bezier(.2,.9,.2,1);
+
+}
+
+
+.card-overlay.open .gift-card {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.close-card {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 17px;
+
+    width: 42px;
+
+    height: 42px;
+
+    padding: 0;
+
+    border:
+        1px solid
+        rgba(150,80,110,0.25);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.8);
+
+    color: #9d4d72;
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    line-height: 38px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+.close-card:hover {
+
+    transform:
+        rotate(90deg)
+        scale(1.08);
+
+    background:
+        #fff0f5;
+
+}
+
+
+/* =========================================================
+   CARD DECORATION
+========================================================= */
+
+.card-decoration {
+display: flex;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-bottom: 10px;
+
+    color: #c59c58;
+
+    font-size: 18px;
+
+}
+
+
+.card-label {
+
+    margin: 0;
+
+    color: #a7798f;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.gift-card h2 {
+
+    margin:
+        7px
+        0
+        5px;
+
+    color: #714b69;
+
+    font-size: 39px;
+
+    font-weight: normal;
+
+    font-style: italic;
+
+}
+
+
+.name-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 170px;
+
+    margin:
+        0
+        auto;
+
+}
+
+
+.name-line span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(202,164,92,0.55)
+        );
+
+}
+
+
+.name-line span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(202,164,92,0.55),
+            transparent
+        );
+
+}
+
+
+.name-line b {
+
+    color: #c59c58;
+
+    font-weight: normal;
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.card-image-area {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 235px;
+
+    margin:
+        7px
+        auto
+        2px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.card-image-glow {
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(234,190,211,0.25),
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+}
+
+
+.gift-image {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+
+    opacity: 0;
+
+    transform:
+        scale(0.82)
+        translateY(8px);
+
+    filter:
+        drop-shadow(
+            0 17px 17px
+            rgba(70,30,70,0.22)
+        );
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.55s
+        cubic-bezier(.2,.9,.2,1);
+
+}
+
+
+.gift-image.loaded {
+
+    opacity: 1;
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+
+.image-loading {
+
+    position: absolute;
+
+    z-index: 5;
+
+    color: #a57b91;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    animation:
+        loadingPulse
+        0.9s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.image-loading.hidden {
+
+    display: none;
+
+}
+
+
+@keyframes loadingPulse {
+
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message-box {
+
+    min-height: 105px;
+
+    margin:
+        0
+        0
+        18px;
+
+    padding:
+        18px
+        23px;
+
+    border:
+        1px solid
+        rgba(202,164,92,0.28);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,244,248,0.92),
+            rgba(249,239,248,0.8)
+        );
+
+}
+
+
+.message-symbol {
+
+    color: #c59c58;
+
+    font-size: 19px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.friend-message {
+
+    margin: 0;
+
+    color: #76556f;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    font-style: italic;
+
+}
+
+
+.typing-cursor {
+
+    display: inline-block;
+
+    width: 2px;
+
+    height: 17px;
+
+    margin-left: 3px;
+
+    vertical-align: -3px;
+
+    background: #b77996;
+
+    animation:
+        blink
+        0.65s
+        step-end
+        infinite;
+
+}
+
+
+.typing-cursor.hidden {
+
+    display: none;
+
+}
+
+
+@keyframes blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.card-footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #ad8297;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.card-footer span:last-child {
+
+    color: #c59c58;
+
+    font-size: 14px;
+
+}
+/* =========================================================
+   FIREWORKS
+========================================================= */
+
+.celebration-layer {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 3000;
+
+}
+
+
+.magic-particle {
+
+    position: fixed;
+
+    left: var(--x);
+
+    top: var(--y);
+
+    color: var(--color);
+
+    font-size: var(--size);
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 12px currentColor;
+
+    animation:
+        particleBurst
+        var(--duration)
+        cubic-bezier(.12,.8,.25,1)
+        forwards;
+
+}
+
+
+@keyframes particleBurst {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.2)
+            rotate(0deg);
+
+    }
+
+    12% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--dx)),
+                calc(-50% + var(--dy))
+            )
+            scale(1)
+            rotate(var(--rotation));
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .gifts {
+
+        height: 680px;
+
+    }
+
+
+    .gift-masha {
+
+        width: 300px;
+
+    }
+
+
+    .gift-zahraa {
+
+        width: 300px;
+
+        right: 20%;
+
+    }
+
+
+    .gift-heather {
+
+        width: 185px;
+
+        top: 275px;
+
+    }
+
+
+    .gift-angelos {
+
+        width: 300px;
+
+        left: 27%;
+
+        top: 255px;
+
+    }
+
+
+    .gift-fairy {
+
+        width: 185px;
+
+        right: 6%;
+
+        top: 270px;
+
+    }
+
+
+    .gift-ellara {
+
+        width: 145px;
+
+        top: 440px;
+
+    }
+
+
+    .gift-nari {
+
+        width: 380px;
+
+        top: 420px;
+
+    }
+
+}
+
+
+@media (max-width: 720px) {
+
+    .hall {
+
+        padding-top: 30px;
+
+    }
+
+
+    .gifts {
+
+        height: 800px;
+
+        max-width: 560px;
+
+        margin: 0 auto;
+
+    }
+
+
+    .gift-masha {
+
+        width: 250px;
+
+        left: -2%;
+
+        top: 25px;
+
+    }
+
+
+    .gift-zahraa {
+
+        width: 250px;
+
+        right: -2%;
+
+        top: 40px;
+
+    }
+
+
+    .gift-heather {
+
+        width: 145px;
+
+        left: -2%;
+
+        top: 250px;
+
+    }
+
+
+    .gift-angelos {
+
+        width: 245px;
+
+        left: 25%;
+
+        top: 235px;
+
+    }
+
+
+    .gift-fairy {
+
+        width: 145px;
+
+        right: -2%;
+
+        top: 260px;
+
+    }
+
+
+    .gift-ellara {
+
+        width: 125px;
+
+        left: 11%;
+
+        top: 480px;
+
+    }
+
+
+    .gift-nari {
+
+        width: 300px;
+
+        right: -4%;
+
+        top: 465px;
+
+    }
+
+
+    .gift-card {
+
+        padding:
+            30px
+            22px
+            24px;
+
+    }
+
+
+    .card-image-area {
+
+        width: 235px;
+
+        height: 200px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hall-header h1 {
+
+        font-size: 41px;
+
+    }
+
+
+    .gifts {
+
+        height: 690px;
+
+    }
+
+
+    .gift-masha {
+
+        width: 205px;
+
+        left: -5%;
+
+        top: 15px;
+
+    }
+
+
+    .gift-zahraa {
+
+        width: 205px;
+
+        right: -5%;
+
+        top: 25px;
+
+    }
+
+
+    .gift-heather {
+
+        width: 120px;
+
+        top: 215px;
+
+    }
+
+
+    .gift-angelos {
+
+        width: 200px;
+
+        left: 22%;
+
+        top: 205px;
+
+    }
+
+
+    .gift-fairy {
+
+        width: 120px;
+
+        top: 225px;
+
+    }
+
+
+    .gift-ellara {
+
+        width: 100px;
+
+        top: 410px;
+
+    }
+
+
+    .gift-nari {
+
+        width: 250px;
+
+        top: 400px;
+
+    }
+
+
+    .gift-card {
+
+        width: 94vw;
+
+        padding:
+            27px
+            17px
+            22px;
+
+    }
+
+
+    .card-image-area {
+
+        width: 210px;
+
+        height: 180px;
+
+    }
+
+
+    .friend-message {
+
+        font-size: 14px;
+
+    }
+
+}
